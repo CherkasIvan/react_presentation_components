@@ -1,0 +1,71 @@
+.buttonBox {
+    margin: 0 auto;
+    display: flex;
+    width: 50vw;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 5px;
+    margin: 10px;
+    border: none;
+    color: #ffffff;
+    border-radius: 3px;
+    font-family: Montserrat;
+}
+
+.primary:hover {
+    background-color: darkblue !important;
+}
+
+.secondary {
+    color: #000000;
+}
+
+.secondary:hover {
+    background-color: silver !important;
+}
+
+.secondaryLight {
+    color: #000000;
+}
+
+.secondaryLight:hover {
+    background-color: GhostWhite !important;
+    color: #000000;
+}
+
+.secondaryDark:hover {
+    background-color: DarkSlateGrey !important;
+}
+
+.disabled {
+    color: darkgray;
+}
+
+.active {
+    background-color: #E0E8FF !important;
+    color: blue;
+}
+
+.active:hover{
+    background-color: #D5E0FE !important;
+}
+
+.activeVariant{
+    color: #407E72;
+}
+.activeVariant:hover{
+    background-color: #C5DEE3 !important;
+}
+
+.destructive:hover{
+    background-color: #AA1830 !important;
+}
+
+.ownTheZone{
+    border-radius: 40px;
+}
+.ownTheZone:active {
+    background-color: #303E57 !important;
+}
