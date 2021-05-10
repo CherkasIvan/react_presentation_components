@@ -3,7 +3,7 @@ import Button from "../../components/Buttons";
 import Text from "../../components/Text";
 import Link from "../../components/Link";
 import RoundButtons from "../../components/RoundButtons";
-import {Menu} from "../../assets";
+import {ArrowLeft} from "../../assets";
 
 function PresentationPage() {
 
@@ -14,63 +14,69 @@ function PresentationPage() {
             </h1>
             <div className="buttonBox">
                 <Button
-                    classN={'primary'}
+                    classCSS={'primary'}
                     color={'blue'}
                     text={'Primary'}>
                 </Button>
-                <Button classN={'primary'}
+                <Button classCSS={'primary'}
                         color={"blue"}
+                        iconLeft={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>}
                         text={'Previous step'}>
                 </Button>
-                <Button classN={'primary'}
+                <Button classCSS={'primary'}
                         color={"blue"}
+                        iconRight={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>}
                         text={'Continue'}>
                 </Button>
-                <Button classN={'primary'}
+                <Button classCSS={'primary'}
                         color={"blue"}
+                        iconRight={<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>}
                         text={'Create New'}>
                 </Button>
-                <Button classN={'primary'}
+                <Button classCSS={'primary'}
                         size={BUTTON_SIZE.small}
                         color={"blue"}
                         text={'Primary'}>
                 </Button>
 
-                <Button classN={'secondary'}
+                <Button classCSS={'secondary'}
                         color={"Gainsboro"}
                         text={'Secondary'}>
                 </Button>
-                <Button classN={'secondaryLight'}
+                <Button classCSS={'secondaryLight'}
                         color={"inherit"}
                         text={'Secondary light'}>
                 </Button>
-                <Button classN={'secondaryDark'}
+                <Button classCSS={'secondaryDark'}
                         color={"#00000F"}
                         text={'Secondary'}>
                 </Button>
-                <Button classN={'disabled'}
+                <Button classCSS={'disabled'}
                         text={'Disabled'}>
                 </Button>
 
                 <Button spinner={BUTTON_SIZE.spinner}>
                 </Button>
 
-                <Button classN={'active'}
+                <Button classCSS={'active'}
                         color={"LightSlateGray"}
                         text={'Active'}>
                 </Button>
-                <Button classN={'activeVariant'}
+                <Button classCSS={'activeVariant'}
                         color={"#D5E7EB"}
                         text={'Active variant'}>
                 </Button>
-                <Button classN={'destructive'}
+                <Button classCSS={'destructive'}
                         color={"#CE2743"}
                         text={'Destructive'}>
                 </Button>
                 <Button>
                 </Button>
-                <Button classN={'ownTheZone'}
+                <Button
+                        classCSS={'ownTheZone'}
                         color={"#0D192E"}
+                        iconLeft={<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="orange"><g><rect fill="none" height="24" width="24" x="0"/><path d="M12,8.89L12.94,12h2.82l-2.27,1.62l0.93,3.01L12,14.79l-2.42,1.84l0.93-3.01L8.24,12h2.82L12,8.89 M12,2l-2.42,8H2 l6.17,4.41L5.83,22L12,17.31L18.18,22l-2.35-7.59L22,10h-7.58L12,2L12,2z"/></g></svg>}
+                        iconLeftColored={<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="orange"><g><path d="M0,0h24v24H0V0z" fill="none"/><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-0.61L12,2L9.19,8.63L2,9.24l5.46,4.73L5.82,21L12,17.27z"/></g></svg>}
                         text={'Own the zone'}>
                 </Button>
                 <select>

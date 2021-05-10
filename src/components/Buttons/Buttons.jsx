@@ -1,10 +1,11 @@
 import {BUTTON_SIZE} from "constants/buttonSizes"
 import "./Buttons.css"
 
-function Buttons({classN, color, size = BUTTON_SIZE.big, text, spinner}) {
+function Buttons({classCSS, color, size = BUTTON_SIZE.big, text, spinner,iconRight,iconLeft}) {
     return (
-        <button className={classN}
-                style={{backgroundColor: color, width: size}}>{text} {spinner}
+        <button
+                className={classCSS}
+                style={{backgroundColor: color, width: size}}>{iconLeft} {text} {spinner} {iconRight}
         </button>
     )
 }

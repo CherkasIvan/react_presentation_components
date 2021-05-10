@@ -5,7 +5,15 @@
     flex-wrap: wrap;
 }
 
+
+.buttonBox > *{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 button {
+
     padding: 10px 5px;
     margin: 10px;
     border: none;
