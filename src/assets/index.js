@@ -1,0 +1,5 @@
+export {ReactComponent as Menu} from './images/menu_black_24dp.svg'
+export {ReactComponent as Star} from './images/star_black_24dp.svg'
+export {ReactComponent as Add} from './images/add_black_24dp.svg'
+export {ReactComponent as East} from './images/east_black_24dp.svg'
+export {ReactComponent as Notification} from './images/notifications_black_24dp.svg'

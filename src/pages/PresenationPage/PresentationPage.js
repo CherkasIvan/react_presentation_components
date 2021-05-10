@@ -1,9 +1,12 @@
 import {BUTTON_SIZE} from "../../constants/buttonSizes";
 import Button from "../../components/Buttons";
-import Texts from "../../components/Texts";
-import Links from "../../components/Links";
+import Text from "../../components/Text";
+import Link from "../../components/Link";
+import RoundButtons from "../../components/RoundButtons";
+import {Menu} from "../../assets";
 
 function PresentationPage() {
+
     return (
         <div>
             <h1>
@@ -33,7 +36,6 @@ function PresentationPage() {
                         text={'Primary'}>
                 </Button>
 
-
                 <Button classN={'secondary'}
                         color={"Gainsboro"}
                         text={'Secondary'}>
@@ -41,7 +43,6 @@ function PresentationPage() {
                 <Button classN={'secondaryLight'}
                         color={"inherit"}
                         text={'Secondary light'}>
-
                 </Button>
                 <Button classN={'secondaryDark'}
                         color={"#00000F"}
@@ -50,8 +51,10 @@ function PresentationPage() {
                 <Button classN={'disabled'}
                         text={'Disabled'}>
                 </Button>
-                <Button icon={".autorenew_black_24dp.svg"}>
+
+                <Button spinner={BUTTON_SIZE.spinner}>
                 </Button>
+
                 <Button classN={'active'}
                         color={"LightSlateGray"}
                         text={'Active'}>
@@ -64,16 +67,13 @@ function PresentationPage() {
                         color={"#CE2743"}
                         text={'Destructive'}>
                 </Button>
-                <Button icon={".autorenew_black_24dp.svg"}>
+                <Button>
                 </Button>
                 <Button classN={'ownTheZone'}
                         color={"#0D192E"}
                         text={'Own the zone'}>
-
-                    <img src="C:\Users\Disto\Desktop\Programing\front-end\TeachMeSkills\React\reactRostislav\lesson1\src\assets\images\star_black_24dp.svg"/>
-
                 </Button>
-                <select >
+                <select>
                     <option value="artwork">Upload Artwork</option>
                     <option value="map">New Map</option>
                     <option value="schedule">New Schedule</option>
@@ -81,43 +81,55 @@ function PresentationPage() {
             </div>
             <hr/>
             <hr/>
-            <Texts tag={'h1'}
-                   text={'Heading 1'}>
-            </Texts>
+
+            {/*Text*/}
+            <Text tag={'h1'}
+                  text={'Heading 1'}>
+            </Text>
             <hr/>
-            <Texts tag={'h2'}
-                   text={'Heading 2'}>
-            </Texts>
+            <Text tag={'h2'}
+                  text={'Heading 2'}>
+            </Text>
             <hr/>
-            <Texts tag={'h3'}
-                   text={'Heading 3'}>
-            </Texts>
+            <Text tag={'h3'}
+                  text={'Heading 3'}>
+            </Text>
             <hr/>
-            <Texts tag={'h4'}
-                   text={'Heading 4'}>
-            </Texts>
+            <Text tag={'h4'}
+                  text={'Heading 4'}>
+            </Text>
             <hr/>
-            <Texts classN={'bigP'}
-                   tag={'p'}
-                   text={"We are ssionate about designing to enrich and enhance your " +
+            <Text classCSS={'bigP'}
+                  tag={'p'}
+                  text={"We are ssionate about designing to enrich and enhance your " +
                    "lifestyle and this translates into your home interior design. Our firm is made up" +
                    " of an amazing mix of architects, interior designers, interior decorators and manufacturers. " +
                    "We are professional, committed and passionate about our work."}>
-            </Texts>
+            </Text>
             <hr/>
-            <Texts classN={'smallP'}
-                   tag={'p'}
-                   text={"We are a team of professional photographers and videographers who would" +
+            <Text classCSS={'smallP'}
+                  tag={'p'}
+                  text={"We are a team of professional photographers and videographers who would" +
                    " love to share our passion and knowledge with you!"}>
-            </Texts>
+            </Text>
+
             <hr/>
             <hr/>
+
+            {/*Links*/}
             <div className='linksBox'>
-                <Links classN={'linkPrimary'} text={'Link Primary'}></Links>
-                <Links classN={'linkSecondary'} text={'Link Secondary'}></Links>
-                <Links classN={'linkDisabled'} text={'Link Disabled'}></Links>
-                <Links classN={'linkDistructive'} text={'Link Distructive'}></Links>
+                <Link classCSS={'linkPrimary'} text={'Link Primary'}/>
+                <Link classCSS={'linkSecondary'} text={'Link Secondary'}/>
+                <Link classCSS={'linkDisabled'} text={'Link Disabled'}/>
+                <Link classCSS={'linkDestructive'} text={'Link Destructive'}/>
             </div>
+
+            <hr/>
+            <hr/>
+
+            {/*RoundButtons*/}
+            <RoundButtons classCSS={'roundButton'} color={'white'}></RoundButtons>
+            <RoundButtons classCSS={'roundButton'} color={'white'} colorBlock={'LightGrey'}></RoundButtons>
         </div>
     )
 }

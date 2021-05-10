@@ -1,25 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Spinner from './Spinner';
+import "./Spinner.css"
 
-class Test extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            loading: true
-        }
-    }
-
-    componentDidMount(){
-        this.setState({loading: false})
-    }
-
-    render(){
-        let content = this.state.loading ? <Spinner /> : cars.map((c, i) => <div key={i}>{c.name}</div>)
-
-        return (
-            <div>{content}</div>
-        )
-    }
+function Spinner() {
+    return (
+        <div id="circular3dG">
+            <div id="circular3d_1G" className="circular3dG"></div>
+            <div id="circular3d_2G" className="circular3dG"></div>
+            <div id="circular3d_3G" className="circular3dG"></div>
+            <div id="circular3d_4G" className="circular3dG"></div>
+            <div id="circular3d_5G" className="circular3dG"></div>
+            <div id="circular3d_6G" className="circular3dG"></div>
+            <div id="circular3d_7G" className="circular3dG"></div>
+            <div id="circular3d_8G" className="circular3dG"></div>
+        </div>
+    )
 }
+
+export default Spinner

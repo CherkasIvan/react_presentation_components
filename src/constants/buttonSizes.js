@@ -1,8 +1,7 @@
-const assets = 'src/assets/images';
+import Spinner from "../components/Spiner";
+
 export const BUTTON_SIZE = {
     big: '120px',
     small: '90px',
-    icon: 'url(src/assets/images/star_black_24dp.svg)'
+    spinner: <Spinner></Spinner>,
 }
-
-// 'url(' + assets + ')'

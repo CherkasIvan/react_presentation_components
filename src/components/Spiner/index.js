@@ -1,3 +1,3 @@
-import Button from "./Spiner";
+import Spinner from "./Spiner";
 
-export default Button
+export default Spinner
