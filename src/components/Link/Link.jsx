@@ -1,8 +1,8 @@
 import "./Link.css"
 
-function Link({classCSS, text}) {
+function Link({styleVariant, text}) {
     return (
-        <a href="#" className={classCSS}>{text}</a>
+        <a href="#" className={styleVariant}>{text}</a>
     )
 }
 

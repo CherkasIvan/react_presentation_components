@@ -74,6 +74,19 @@ button {
 .ownTheZone{
     border-radius: 40px;
 }
+.link {
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.link svg{
+    transform: rotate(-45deg);
+}
 .ownTheZone:active {
     background-color: #303E57 !important;
+}
+
+.link{
+    color: #000000;
 }

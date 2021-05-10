@@ -1,7 +1,7 @@
 import Spinner from "../components/Spiner";
 
 export const BUTTON_SIZE = {
-    big: '120px',
-    small: '90px',
+    big: '150px',
+    small: '100px',
     spinner: <Spinner></Spinner>,
 }

@@ -1,4 +1,4 @@
-h1{
+.header{
     font-family: Montserrat;
     font-weight: bold;
     font-size: 48pt;
@@ -22,8 +22,8 @@ h3{
 h4{
     font-family: Montserrat;
     font-weight: bold;
-    font-size: 20pt;
-    line-height: 32pt;
+    font-size: 14pt;
+    line-height: 18pt;
 }
 
 p {
