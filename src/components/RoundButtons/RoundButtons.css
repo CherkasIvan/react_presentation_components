@@ -1,8 +1,0 @@
-button{
-    height: 50px;
-    width: 50px;
-}
-
-.roundButton:hover{
-    background-color: #F1F2F5 !important;
-}

@@ -1,29 +1,15 @@
-import "./RoundButtons.css"
-import {ROUND_BUTTON} from "../../constants/roundButtons";
-import React from "react";
-import {Add, East, Menu, Notification, Star} from "../../assets";
+import { StyledRoundButton} from './RoundButtonStyles';
+import { BUTTON_SIZE } from 'constants/buttonSizes';
 
-function RoundButtons({ radius = ROUND_BUTTON.border, styleVariant, color, colorBlock}) {
-
+function RoundButton({ color='white', size = BUTTON_SIZE.ROUND_BUTTON_SIZE, children }) {
     return (
-        <div className='buttonWrapper' style={{backgroundColor: colorBlock}}>
-            <button className={styleVariant} style={{borderRadius: radius, backgroundColor: color}}>
-                <Menu></Menu>
-            </button>
-            <button className={styleVariant} style={{borderRadius: radius, backgroundColor: color}}>
-                <Star></Star>
-            </button>
-            <button className={styleVariant} style={{borderRadius: radius, backgroundColor: color}}>
-                <Add></Add>
-            </button>
-            <button className={styleVariant} style={{borderRadius: radius, backgroundColor: color}}>
-                <East></East>
-            </button>
-            <button className={styleVariant} style={{borderRadius: radius, backgroundColor: color}}>
-                <Notification></Notification>
-            </button>
-        </div>
+        <StyledRoundButton
+            size={size}
+            backgroundColor={color}
+        >
+            {children}
+        </StyledRoundButton>
     )
-}
+};
 
-export default RoundButtons
+export default RoundButton;

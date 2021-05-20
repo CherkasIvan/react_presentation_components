@@ -1,13 +1,18 @@
-import {BUTTON_SIZE} from "constants/buttonSizes"
-import "./Buttons.css"
+import { StyledButton } from './ButtonStyles';
+import { BUTTON_SIZE } from 'constants/buttonSizes';
 
-function Buttons({styleVariant, color, size = BUTTON_SIZE.big, text, spinner,iconRight,iconLeft}) {
+function Button({ color='blue', onClick, size = BUTTON_SIZE.big, children, text, radius }) {
     return (
-        <button
-                className={styleVariant}
-                style={{backgroundColor: color, width: size}}>{iconLeft} {text} {spinner} {iconRight}
-        </button>
+        <StyledButton
+            backgroundColor={color}
+            onClick={onClick}
+            width={size}
+            borderRadius={radius}
+        >
+            {text}
+            {children}
+        </StyledButton>
     )
-}
+};
 
-export default Buttons
+export default Button;
