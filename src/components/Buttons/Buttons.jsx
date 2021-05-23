@@ -1,7 +1,7 @@
 import { StyledButton } from './ButtonStyles';
 import { BUTTON_SIZE } from 'constants/buttonSizes';
 
-function Button({ color='blue', onClick, size = BUTTON_SIZE.big, children, text, radius }) {
+function Buttons({ color='blue', onClick, size = BUTTON_SIZE.big, children, text, radius }) {
     return (
         <StyledButton
             backgroundColor={color}
@@ -15,4 +15,4 @@ function Button({ color='blue', onClick, size = BUTTON_SIZE.big, children, text,
     )
 };
 
-export default Button;
+export default Buttons;

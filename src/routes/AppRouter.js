@@ -1,14 +1,30 @@
 import {Switch, Route, Redirect} from 'react-router-dom'
 
 import pageRoutes from  '../constants/pageRouter'
-import {Page404, PresentationPage} from '../pages'
+import {Page404, PresentationPage, Contact, Profile, SignIn, Home} from '../pages'
 
 function AppRouter() {
     return (
         <Switch>
             {/*List of routes in app*/}
-            <Route exact from="/" to={pageRoutes.PRESENTATION}>
+            <Route exact path={pageRoutes.PRESENTATION}>
                 <PresentationPage/>
+            </Route>
+
+            <Route exact path={pageRoutes.CONTACT}>
+                <Contact/>
+            </Route>
+
+            <Route exact path={pageRoutes.PROFILE}>
+                <Profile/>
+            </Route>
+
+            <Route exact path={pageRoutes.HOME}>
+                <Home/>
+            </Route>
+
+            <Route exact path={pageRoutes.SIGN_IN}>
+                <SignIn/>
             </Route>
 
             {/*Special case: redirect to sign in from root page*/}
