@@ -15,7 +15,6 @@ import {makeStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
-import FormName from "../../components/FormName";
 
 function PresentationPage() {
 
@@ -34,6 +33,16 @@ function PresentationPage() {
         },
     }));
     const classes = useStyles();
+    const [valueState, setValueState] = useState('');
+    const lastRenderedState=setValueState.lastRenderedState;
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        console.log({setValueState})
+        alert(setValueState)
+    };
+
     const [buttonState, setButtonState] = useState(false);
 
     const handleClick = () => {
@@ -42,7 +51,6 @@ function PresentationPage() {
 
     return (
         <div>
-            <FormName/>
             <HeaderMenuBar>
                 <NavigationListWrapper>
                     <NavigationLink href={pageRouter.PRESENTATION}>Presentation</NavigationLink>
@@ -59,22 +67,21 @@ function PresentationPage() {
 
             <div className="buttonBox">
                 <Buttons text={'Primary'}
-                        color={colors.PRIMARY}>
+                         color={colors.PRIMARY}>
                 </Buttons>
                 <Buttons text={'Continue'}
-                        children={<AddIcon/>}>
+                         children={<AddIcon/>}>
                 </Buttons>
                 <Buttons text={'Previos step'}/>
                 <Buttons text={'Create new'}/>
                 <Buttons text={'Primary'}/>
 
                 <Buttons color={colors.DARK}
-                        text={'Own the zone'}
-                        onClick={handleClick}
+                         text={'Own the zone'}
+                         onClick={handleClick}
                 >
                     {buttonState ? <StarFilledIcon/> : <StarUnFilledIcon/>}
                 </Buttons>
-
                 <Buttons children={<Spiner/>}></Buttons>
             </div>
             <hr/>
@@ -126,29 +133,33 @@ function PresentationPage() {
                 <RoundButtons><Notification></Notification></RoundButtons>
             </div>
             <hr/>
-
-            <TextField
-                id="outlined-full-width"
-                label="Enter your name"
-                placeholder="Name should be here"
-                fullWidth
-                margin="normal"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                variant="outlined"
-                variant="filled"
-            />
-            <Button
-                variant="contained"
-                color="primary"
-                size="big"
-                className={classes.button}
-                startIcon={<SaveIcon />}
-                disableElevation
-            >
-                Save your name
-            </Button>
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
+                <TextField
+                    id="outlined-full-width"
+                    label="Enter your name"
+                    placeholder="Name should be here"
+                    fullWidth
+                    margin="normal"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    variant="outlined"
+                    variant="filled"
+                    value={valueState}
+                    onChange={(e) => setValueState(e.target.value)}
+                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    size="big"
+                    className={classes.button}
+                    startIcon={<SaveIcon/>}
+                    disableElevation
+                    onClick={handleSubmit}
+                >
+                    Save your name
+                </Button>
+            </form>
         </div>
     )
 }
