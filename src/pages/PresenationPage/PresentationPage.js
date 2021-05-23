@@ -34,13 +34,10 @@ function PresentationPage() {
     }));
     const classes = useStyles();
     const [valueState, setValueState] = useState('');
-    const lastRenderedState=setValueState.lastRenderedState;
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
-        console.log({setValueState})
-        alert(setValueState)
+        alert(valueState)
     };
 
     const [buttonState, setButtonState] = useState(false);
