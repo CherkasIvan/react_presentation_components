@@ -22,12 +22,13 @@ function PresentationPage() {
         console.log(formikHelpers)
         formikHelpers.resetForm()
     }
+
     const formik = useFormik({
         ...formikConfig,
         onSubmit: handleSubmitForm,
     })
-
     console.log(formik)
+
     const [buttonState, setButtonState] = useState(false);
 
     const handleClick = () => {
