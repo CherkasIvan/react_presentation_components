@@ -11,36 +11,23 @@ import Spiner from '../../components/Spiner'
 import colors from '../../styles/colors'
 import {AddIcon, StarFilledIcon, StarUnFilledIcon, NavigationListWrapper} from './PresentationPageStyles'
 import HeaderMenuBar from '../../modules/HeaderMenuBar'
-import {makeStyles} from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import SaveIcon from '@material-ui/icons/Save';
-import Button from '@material-ui/core/Button';
+import InputText from "../../components/InputText";
+import {BUTTON_SIZE} from "../../constants/buttonSizes";
+import {useFormik} from "formik";
+import {formikConfig} from './data'
 
 function PresentationPage() {
+    const handleSubmitForm = (data, formikHelpers) => {
+        console.log(data)
+        console.log(formikHelpers)
+        formikHelpers.resetForm()
+    }
+    const formik = useFormik({
+        ...formikConfig,
+        onSubmit: handleSubmitForm,
+    })
 
-
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            display: 'flex',
-            flexWrap: 'wrap',
-        },
-        textField: {
-            marginLeft: theme.spacing(1),
-            marginRight: theme.spacing(1),
-            width: '25ch',
-        },
-        button: {
-            margin: theme.spacing(2),
-        },
-    }));
-    const classes = useStyles();
-    const [valueState, setValueState] = useState('');
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert(valueState)
-    };
-
+    console.log(formik)
     const [buttonState, setButtonState] = useState(false);
 
     const handleClick = () => {
@@ -131,32 +118,27 @@ function PresentationPage() {
                 <RoundButtons><Notification></Notification></RoundButtons>
             </div>
             <hr/>
-            <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
-                <TextField
-                    id="outlined-full-width"
-                    label="Enter your name"
-                    placeholder="Name should be here"
-                    fullWidth
-                    margin="normal"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                    variant="filled"
-                    value={valueState}
-                    onChange={(e) => setValueState(e.target.value)}
-                />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    size="big"
-                    className={classes.button}
-                    startIcon={<SaveIcon/>}
-                    disableElevation
-                    onClick={handleSubmit}
-                >
-                    Save your name
-                </Button>
+            <form onSubmit={formik.handleSubmit}>
+                <InputText
+                    error={formik.errors.firstName}
+                    name='firstName'
+                    placeholder='Enter your name'
+                    value={formik.values.firstName}
+                    onChange={formik.handleChange}>
+                </InputText>
+                <InputText
+                    error={formik.errors.lastName}
+                    name='lastName'
+                    placeholder='Enter your surname'
+                    value={formik.values.lastName}
+                    onChange={formik.handleChange}>
+                </InputText>
+                <Buttons
+                    color={colors.PRIMARY}
+                    size={BUTTON_SIZE.big}
+                    text='Submit'
+                    type='submit'>
+                </Buttons>
             </form>
         </div>
     )

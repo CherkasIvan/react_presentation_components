@@ -1,7 +1,7 @@
 import { StyledButton } from './ButtonStyles';
 import { BUTTON_SIZE } from 'constants/buttonSizes';
 
-function Buttons({ color='blue', onClick, size = BUTTON_SIZE.big, children, text, radius }) {
+function Buttons({ color='blue', onClick, size = BUTTON_SIZE.big, children, text, radius, type='button' }) {
     return (
         <StyledButton
             backgroundColor={color}
