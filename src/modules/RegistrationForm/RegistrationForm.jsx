@@ -7,10 +7,11 @@ import InputText from "../../components/InputText";
 import Buttons from "../../components/Buttons";
 import colors from "../../styles/colors";
 import {BUTTON_SIZE} from "../../constants/buttonSizes";
+import ButtonGradient from "../../components/ButtonGradient/ButtonGradient";
 
 function RegistrationForm() {
 
-     const StyledInputText = styled(TextField)``;
+    const StyledInputText = styled(TextField)``;
 
     const handleSubmitForm = (data, formikHelpers) => {
         console.log(data)
@@ -48,19 +49,25 @@ function RegistrationForm() {
                 <InputText
                     style={{marginTop: '20px'}}
                     label='Password'
-                    error={formik.errors.lastName}
+                    error={formik.errors.password}
+                    maxLength={8}
                     name='password'
+                    type='text'
                     placeholder='Enter your password'
                     variant="outlined"
                     value={formik.values.password}
                     onChange={formik.handleChange}>
                 </InputText>
                 <Buttons
-                    color={colors.GRADIENT}
                     size={BUTTON_SIZE.big}
+                    color={'hsl(130deg, 100%, 40%)'}
                     text='Submit'
                     type='submit'>
                 </Buttons>
+                <ButtonGradient text='Submit'
+                                width={BUTTON_SIZE.big}
+                                type='submit'
+                ></ButtonGradient>
             </form>
         </RegistrationFormStyled>
     )

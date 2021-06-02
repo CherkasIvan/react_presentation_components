@@ -40,7 +40,7 @@ const colors = {
     SECONDARY_LIGHT: '#F7F8FA',
     SUCCESS: '#13C27C',
     WHITE: '#FFFFFF',
-    GRADIENT: 'rgba(250,0,0,0.5)'
+    GRADIENT: 'linear-gradient(rgba(250,0,0,0.5),transparent)'
 };
 
 export default colors;

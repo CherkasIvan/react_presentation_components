@@ -1,15 +1,16 @@
 import {StyledInputText} from './InputTextStyles';
 
-function InputText({style,
+function InputText({
+                       style,
                        autoFocus = false,
                        error,
                        disabled = false,
                        label = '',
-                       maxLength = Infinity,
+                       maxLength,
                        name = '',
                        pattern,
                        placeholder,
-                       variant='filled',
+                       variant = 'filled',
                        role = 'textbox',
                        success,
                        type = 'text',
@@ -26,6 +27,7 @@ function InputText({style,
             value={value}
             pattern={pattern}
             role={role}
+            maxLength={maxLength}
             type={type}
             name={name}
             label={label}
