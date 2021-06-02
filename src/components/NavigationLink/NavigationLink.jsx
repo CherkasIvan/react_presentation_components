@@ -17,6 +17,7 @@ function NavigationLink({
     ):
         (
             <InternalLink
+                exact
                 onClick={onClick}
                 role='link'
                 target={openInNewTab?'_blank':'_self'}

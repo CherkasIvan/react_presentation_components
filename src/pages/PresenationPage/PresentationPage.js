@@ -15,6 +15,7 @@ import InputText from "../../components/InputText";
 import {BUTTON_SIZE} from "../../constants/buttonSizes";
 import {useFormik} from "formik";
 import {formikConfig} from './data'
+import Counter from "../../modules/Counter";
 
 function PresentationPage() {
     const handleSubmitForm = (data, formikHelpers) => {
@@ -128,6 +129,7 @@ function PresentationPage() {
                     onChange={formik.handleChange}>
                 </InputText>
                 <InputText
+                    style={{marginTop: '5px'}}
                     error={formik.errors.lastName}
                     name='lastName'
                     placeholder='Enter your surname'
@@ -137,10 +139,11 @@ function PresentationPage() {
                 <Buttons
                     color={colors.PRIMARY}
                     size={BUTTON_SIZE.big}
-                    text='Submit'
+                    text='Log in'
                     type='submit'>
                 </Buttons>
             </form>
+            <Counter></Counter>
         </div>
     )
 }

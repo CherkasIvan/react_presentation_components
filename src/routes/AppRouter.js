@@ -28,9 +28,9 @@ function AppRouter() {
             </Route>
 
             {/*Special case: redirect to sign in from root page*/}
-            <Redirect exact from="/" to={pageRoutes.NOT_FOUND}/>
+            <Redirect exact from="/" to={pageRoutes.PRESENTATION}/>
 
-            <Route>
+            <Route exact path={pageRoutes.NOT_FOUND}>
                 {/*Special case: redirect to sign in from 404*/}
                 <Page404/>
             </Route>

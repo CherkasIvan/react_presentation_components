@@ -1,9 +1,20 @@
 import { StyledButton } from './ButtonStyles';
 import { BUTTON_SIZE } from 'constants/buttonSizes';
+import { memo } from "react";
 
-function Buttons({ color='blue', onClick, size = BUTTON_SIZE.big, children, text, radius, type='submit'}) {
+function Buttons({
+                     className,
+                     color = 'blue',
+                     onClick,
+                     size = BUTTON_SIZE.big,
+                     children,
+                     text,
+                     radius,
+                     type = 'submit'
+                 }) {
     return (
         <StyledButton
+            className={className}
             backgroundColor={color}
             onClick={onClick}
             width={size}
@@ -16,4 +27,4 @@ function Buttons({ color='blue', onClick, size = BUTTON_SIZE.big, children, text
     )
 };
 
-export default Buttons;
+export default memo(Buttons);
