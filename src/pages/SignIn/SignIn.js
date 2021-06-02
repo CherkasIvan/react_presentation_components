@@ -4,12 +4,7 @@ import {Star} from '../../assets'
 import HeaderMenuBar from '../../modules/HeaderMenuBar'
 import {NavigationListWrapper} from '../PresenationPage/PresentationPageStyles'
 import Text from "../../components/Text";
-import InputText from "../../components/InputText";
-import Buttons from "../../components/Buttons";
-import colors from "../../styles/colors";
-import {BUTTON_SIZE} from "../../constants/buttonSizes";
-import {useFormik} from "formik";
-import {formikConfig} from './data'
+
 import RegistrationForm from "../../modules/RegistrationForm";
 
 function SignIn() {

@@ -1,6 +1,6 @@
-import { StyledButton } from './ButtonStyles';
-import { BUTTON_SIZE } from 'constants/buttonSizes';
-import { memo } from "react";
+import {StyledButton} from './ButtonStyles';
+import {BUTTON_SIZE} from 'constants/buttonSizes';
+import {memo} from "react";
 
 function Buttons({
                      className,
