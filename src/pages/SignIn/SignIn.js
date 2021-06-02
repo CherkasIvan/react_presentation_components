@@ -1,8 +1,16 @@
 import NavigationLink from '../../components/NavigationLink'
 import pageRouter from '../../constants/pageRouter'
-import {Menu, Star, Add, East, Notification} from '../../assets'
+import {Star} from '../../assets'
 import HeaderMenuBar from '../../modules/HeaderMenuBar'
-import {AddIcon, StarFilledIcon, StarUnFilledIcon, NavigationListWrapper} from '../PresenationPage/PresentationPageStyles'
+import {NavigationListWrapper} from '../PresenationPage/PresentationPageStyles'
+import Text from "../../components/Text";
+import InputText from "../../components/InputText";
+import Buttons from "../../components/Buttons";
+import colors from "../../styles/colors";
+import {BUTTON_SIZE} from "../../constants/buttonSizes";
+import {useFormik} from "formik";
+import {formikConfig} from './data'
+import RegistrationForm from "../../modules/RegistrationForm";
 
 function SignIn() {
     return (
@@ -17,9 +25,8 @@ function SignIn() {
                     <Star></Star>
                 </NavigationListWrapper>
             </HeaderMenuBar>
-            <h1>
-                SignIn
-            </h1>
+            <Text variant='h1' styleVariant={'Sign in '}>Login form</Text>
+            <RegistrationForm></RegistrationForm>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import {StyledInputText} from './InputTextStyles';
 
-function InputText({
+function InputText({style,
                        autoFocus = false,
                        error,
                        disabled = false,
@@ -9,6 +9,7 @@ function InputText({
                        name = '',
                        pattern,
                        placeholder,
+                       variant='filled',
                        role = 'textbox',
                        success,
                        type = 'text',
@@ -20,6 +21,7 @@ function InputText({
                    }) {
     return (
         <StyledInputText
+            style={style}
             autoFocus={autoFocus}
             value={value}
             pattern={pattern}
@@ -27,7 +29,7 @@ function InputText({
             type={type}
             name={name}
             label={label}
-            variant="filled"
+            variant={variant}
             onChange={onChange}
             onKeyUp={onKeyUp}
             onKeyPress={disabled ? undefined : onKeyPress}

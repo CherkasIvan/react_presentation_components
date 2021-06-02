@@ -3,7 +3,6 @@
 }
 
 .buttonBox {
-    margin: 0 auto;
     width: 65vw;
     display: flex;
     justify-content: space-around;
