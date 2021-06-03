@@ -19,7 +19,7 @@ export const coursesSlice = createSlice({
        favorite: false
      },
      {
-       id: '1',
+       id: '3',
        title: 'QA',
        startDate: 'june 25',
        duration: '8 months',
