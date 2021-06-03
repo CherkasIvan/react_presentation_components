@@ -9,7 +9,7 @@ function NavigationLink({
                         }) {
   return externalLink ? (
       <ExternalLink
-        /* eslint-disabled-next-line no-script-url */
+        // eslint-disable-next-line
         href={href || 'javascript:void(0)'}
         onCLick={onClick}
         role='link'

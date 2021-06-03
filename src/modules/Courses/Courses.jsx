@@ -1,31 +1,28 @@
 import {useDispatch, useSelector} from 'react-redux'
-import {counterActionTypes} from 'modules/Courses/redux/coursesSlice'
+import {coursesActionTypes} from "modules/Courses/redux/coursesSlice";
 
 function Courses() {
-  const count = useSelector(state => state.counter.value);
-  const dispatch = useDispatch();
+  const courses = useSelector(state => state.courses.directions)
+  console.log(courses)
+  const dispatch = useDispatch()
 
-  const incrementHandler = () => dispatch(counterActionTypes.increment());
-
-  const decrementHandler = () => dispatch(counterActionTypes.decrement());
+  const changeFavoriteStatusHandler = (id) => {
+    dispatch(coursesActionTypes.changeFavoriteStatus({id: id}))
+  }
 
   return (
     <div>
-      <div>
-        <button
-          aria-label="Increment value"
-          onClick={incrementHandler}
-        >
-          Increment
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={decrementHandler}
-        >
-          Decrement
-        </button>
-      </div>
+      {courses.map((courses, index) =>
+        <div key={`${index}-${courses.id}`}>
+          <ul>
+            <li>{`title: ${courses.title}`}</li>
+            <li>{`start date: ${courses.startDate}`}</li>
+            <li>{`duration: ${courses.duration}`}</li>
+            <li>{`favorite: ${courses.favorite}`}</li>
+          </ul>
+          <button onClick={() => changeFavoriteStatusHandler(courses.id)}>change favorite status</button>
+        </div>
+      )}
     </div>
   )
 }

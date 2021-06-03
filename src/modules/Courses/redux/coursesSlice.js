@@ -35,6 +35,6 @@ export const coursesSlice = createSlice({
   }
 })
 
-export const counterActionTypes = coursesSlice.actions
+export const coursesActionTypes = coursesSlice.actions
 
 export default coursesSlice.reducer
