@@ -3,7 +3,7 @@ import counterReducer from '../modules/Counter/redux/counterSlice'
 
 
 export default configureStore({
-    reducer: {
-        counter: counterReducer
-    }
+  reducer: {
+    counter: counterReducer
+  }
 })

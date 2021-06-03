@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Add, Star, StarUnfill} from '../../assets';
+import {Add, Star, StarUnfill} from 'assets';
 
 export const AddIcon = styled(Add)`
   fill: white;

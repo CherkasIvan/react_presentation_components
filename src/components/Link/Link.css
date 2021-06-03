@@ -1,27 +1,27 @@
 .linksBox {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 a {
-    font-family: Montserrat;
-    text-decoration: none;
-    color: blue;
+  font-family: Montserrat;
+  text-decoration: none;
+  color: blue;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .linkDisabled {
-    pointer-events: none;
-    color: darkgray;
+  pointer-events: none;
+  color: darkgray;
 }
 
 .linkSecondary {
-    color: gray;
+  color: gray;
 }
 
 .linkDestructive {
-    color: red;
+  color: red;
 }
