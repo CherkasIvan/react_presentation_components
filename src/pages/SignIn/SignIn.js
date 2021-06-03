@@ -22,6 +22,7 @@ function SignIn() {
       </HeaderMenuBar>
       <Text variant='h1' styleVariant={'Sign in '}>Login form</Text>
       <RegistrationForm></RegistrationForm>
+
     </div>
   )
 }

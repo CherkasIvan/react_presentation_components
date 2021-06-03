@@ -1,8 +1,9 @@
-import NavigationLink from '../../components/NavigationLink'
-import {PAGE_ROUTES} from '../../constants/pageRouter'
-import {Star} from '../../assets'
-import HeaderMenuBar from '../../modules/HeaderMenuBar'
+import NavigationLink from 'components/NavigationLink'
+import {PAGE_ROUTES} from 'constants/pageRouter'
+import {Star} from 'assets'
+import HeaderMenuBar from 'modules/HeaderMenuBar'
 import {NavigationListWrapper} from '../PresenationPage/PresentationPageStyles'
+import Courses from "modules/Courses";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
       <h1>
         Home
       </h1>
+      <Courses></Courses>
     </div>
   )
 }
