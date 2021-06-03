@@ -1,30 +1,33 @@
 import {ExternalLink, InternalLink} from './NavigationLinkStyles'
 
 function NavigationLink({
-    children,
-    externalLink = false,
-    openInNewTab = false,
-    onClick,
-    href,}) {
-    return externalLink ? (
-        <ExternalLink
-        href={href||'javascript:void(0)'}
+                          children,
+                          externalLink = false,
+                          openInNewTab = false,
+                          onClick,
+                          href,
+                        }) {
+  return externalLink ? (
+      <ExternalLink
+        /* eslint-disabled-next-line no-script-url */
+        href={href || 'javascript:void(0)'}
         onCLick={onClick}
         role='link'
-        target={openInNewTab?'_blank':'_self'}>
-            {children}
-        </ExternalLink>
-    ):
-        (
-            <InternalLink
-                exact
-                onClick={onClick}
-                role='link'
-                target={openInNewTab?'_blank':'_self'}
-                to={href}
-            >
-                {children}
-            </InternalLink>
-        )
+        target={openInNewTab ? '_blank' : '_self'}>
+        {children}
+      </ExternalLink>
+    ) :
+    (
+      <InternalLink
+        exact
+        onClick={onClick}
+        role='link'
+        target={openInNewTab ? '_blank' : '_self'}
+        to={href}
+      >
+        {children}
+      </InternalLink>
+    )
 }
+
 export default NavigationLink

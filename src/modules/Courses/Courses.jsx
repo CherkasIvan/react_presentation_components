@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux'
-import {counterActionTypes} from './redux/counterSlice'
+import {counterActionTypes} from 'modules/Courses/redux/coursesSlice'
 
-function Counter() {
+function Courses() {
   const count = useSelector(state => state.counter.value);
   const dispatch = useDispatch();
 
@@ -30,4 +30,4 @@ function Counter() {
   )
 }
 
-export default Counter;
+export default Courses;

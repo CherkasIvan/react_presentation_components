@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors, spaces, typography } from '../../styles';
-import { BUTTON_SIZE } from '../../constants/buttonSizes';
+import {colors, spaces, typography} from '../../styles';
+import {BUTTON_SIZE} from '../../constants/buttonSizes';
 
 export const StyledButton = styled.button`
   width: ${({width}) => width};
@@ -8,7 +8,7 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: space-around;
   padding: ${spaces.SPACES_8};
-  margin: 5px;
+  margin: 20px auto;
   border: 1px solid ${colors.PRIMARY};
   background-color: ${({backgroundColor}) => backgroundColor};
   font-family: ${typography.FONT_FAMILY_SECONDARY};
@@ -17,8 +17,11 @@ export const StyledButton = styled.button`
   color: ${colors.WHITE};
   cursor: pointer;
   transition-duration: .3s;
+
   &:hover {
     background-color: ${colors.PRIMARY_DARK};
     color: ${colors.WHITE};
   }
+
+  background-image: ${({gradient}) => gradient};
 `;

@@ -1,6 +1,5 @@
 import {NavLink} from 'react-router-dom';
 import styled, {css} from 'styled-components';
-
 import {colors} from 'styles';
 
 export const commonLinksStyles = css`
