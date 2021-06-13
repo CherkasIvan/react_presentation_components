@@ -1,8 +1,15 @@
-import {useDispatch, useSelector} from 'react-redux'
-import {counterActionTypes} from './redux/counterSlice'
+import { useContext } from 'react';
+import Context from 'pages/PresenationPage/context'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { counterActionTypes } from './redux/CounterSlice'
+import { counterValueSelector } from './redux/selectors';
 
 function Counter() {
-  const count = useSelector(state => state.counter.value);
+  const  contextFunc = useContext(Context);
+  console.log(contextFunc)
+
+  const count = useSelector(counterValueSelector);
   const dispatch = useDispatch();
 
   const incrementHandler = () => dispatch(counterActionTypes.increment());

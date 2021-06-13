@@ -1,7 +1,7 @@
 import {Redirect, Route, Switch} from 'react-router-dom'
 
-import {PAGE_ROUTES} from '../constants/pageRouter'
-import {Contact, Home, Page404, PresentationPage, Profile, SignIn} from '../pages'
+import {PAGE_ROUTES} from 'constants/pageRouter'
+import {Contact, Home, Page404, PresentationPage, Profile, SignIn, Favorites} from 'pages'
 
 function AppRouter() {
   return (
@@ -25,6 +25,10 @@ function AppRouter() {
 
       <Route exact path={PAGE_ROUTES.SIGN_IN}>
         <SignIn/>
+      </Route>
+
+      <Route exact path={PAGE_ROUTES.FAVORITES}>
+        <Favorites/>
       </Route>
 
       {/*Special case: redirect to sign in from root page*/}

@@ -6,7 +6,6 @@ import {BrowserRouter} from 'react-router-dom';
 import store from './store/configureStore';
 import {Provider} from "react-redux";
 
-// const history = createBrowserHistory()
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

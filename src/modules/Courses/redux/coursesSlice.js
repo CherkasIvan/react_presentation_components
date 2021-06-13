@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 export const coursesSlice = createSlice({
-  name: 'COURSES  ',
+  name: 'COURSES',
   initialState: {
    directions:[
      {
@@ -29,6 +29,7 @@ export const coursesSlice = createSlice({
   },
   reducers: {
     changeFavoriteStatus: (state, action)=>{
+      console.log(action)
       const course = state.directions.filter(item=>item.id === action.payload.id);
       course[0].favorite=!course[0].favorite;
     }

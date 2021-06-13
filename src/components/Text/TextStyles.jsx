@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const TextH1 = styled.h1`
   display: flex;
   justify-content: center;
+  background-color: yellow;
 `;
 
 export const TextH2 = styled.h2`
