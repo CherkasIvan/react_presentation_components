@@ -1,10 +1,15 @@
-import NavigationLink from 'components/NavigationLink'
-import {PAGE_ROUTES} from 'constants/pageRouter'
-import {Star} from 'assets'
-import HeaderMenuBar from 'modules/HeaderMenuBar'
-import {NavigationListWrapper} from '../PresenationPage/PresentationPageStyles'
+import Airplanes from "modules/AirPlanes";
+import HeaderMenuBar from "modules/HeaderMenuBar";
+import {NavigationListWrapper} from "pages/PresenationPage/PresentationPageStyles";
+import NavigationLink from "components/NavigationLink";
+import {PAGE_ROUTES} from "constants/pageRouter";
+import {Star} from "assets";
+import {useSelector} from "react-redux";
 
-function Contact() {
+function Favorites() {
+  const airplanes = useSelector(state => state.airplanes.directions)
+  console.log(airplanes)
+  const airplanesFav = airplanes.filter((airplane) => airplane.fly === true)
 
   return (
     <div>
@@ -20,10 +25,11 @@ function Contact() {
         </NavigationListWrapper>
       </HeaderMenuBar>
       <h1>
-        Contact
+        Favorites
       </h1>
+      <Airplanes airplanes={airplanesFav}/>
     </div>
   )
 }
 
-export default Contact
+export default Favorites

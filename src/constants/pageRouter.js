@@ -7,4 +7,5 @@ export const PAGE_ROUTES = {
   PROFILE: '/account',
   SIGN_IN: '/account/signin',
   SIGN_UP: '/account/create',
+  FAVORITES: '/favorites',
 };

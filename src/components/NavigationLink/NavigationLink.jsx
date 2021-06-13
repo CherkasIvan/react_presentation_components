@@ -1,4 +1,4 @@
-import {ExternalLink, InternalLink} from './NavigationLinkStyles'
+import {ExternalLink, InternalLink} from 'components/NavigationLink/NavigationLinkStyles'
 
 function NavigationLink({
                           children,

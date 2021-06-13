@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux'
 import {coursesActionTypes} from "modules/Courses/redux/coursesSlice";
+import CourseView from "modules/Courses/CourseView/CourseView";
 
 function Courses() {
   const courses = useSelector(state => state.courses.directions)
@@ -12,16 +13,12 @@ function Courses() {
 
   return (
     <div>
-      {courses.map((courses, index) =>
-        <div key={`${index}-${courses.id}`}>
-          <ul>
-            <li>{`title: ${courses.title}`}</li>
-            <li>{`start date: ${courses.startDate}`}</li>
-            <li>{`duration: ${courses.duration}`}</li>
-            <li>{`favorite: ${courses.favorite}`}</li>
-          </ul>
-          <button onClick={() => changeFavoriteStatusHandler(courses.id)}>change favorite status</button>
-        </div>
+      {courses.map((course, index) =>(
+          <CourseView course={course}
+                      key={`${index}-${course.id}`}
+                      onChangeStatus={changeFavoriteStatusHandler}
+          />
+        )
       )}
     </div>
   )

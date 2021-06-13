@@ -4,7 +4,6 @@ import {Star} from 'assets'
 import HeaderMenuBar from 'modules/HeaderMenuBar'
 import {NavigationListWrapper} from 'pages/SignIn/SignInStyles'
 import Text from "components/Text";
-
 import RegistrationForm from "modules/RegistrationForm";
 
 function SignIn() {
@@ -17,6 +16,7 @@ function SignIn() {
           <NavigationLink href={PAGE_ROUTES.PROFILE}>Profile</NavigationLink>
           <NavigationLink href={PAGE_ROUTES.SIGN_IN}>Sign in</NavigationLink>
           <NavigationLink href={PAGE_ROUTES.CONTACT}>Contact</NavigationLink>
+          <NavigationLink href={PAGE_ROUTES.FAVORITES}>Favorites</NavigationLink>
           <Star></Star>
         </NavigationListWrapper>
       </HeaderMenuBar>

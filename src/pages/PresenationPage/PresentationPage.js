@@ -1,7 +1,7 @@
 import Buttons from "components/Buttons";
 import Text from "components/Text";
 import NavigationLink from 'components/NavigationLink'
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {PAGE_ROUTES} from 'constants/pageRouter'
 import Link from "components/Link";
 import RoundButtons from "components/RoundButtons";
@@ -10,14 +10,28 @@ import "./PresentationPage.css"
 import Spiner from 'components/Spiner'
 import colors from 'styles/colors'
 import {AddIcon, NavigationListWrapper, StarFilledIcon, StarUnFilledIcon} from './PresentationPageStyles'
-import HeaderMenuBar from 'modules/HeaderMenuBar'
 import InputText from "components/InputText";
 import {BUTTON_SIZE} from "constants/buttonSizes";
 import {useFormik} from "formik";
 import {formikConfig} from './data'
-import Counter from "modules/Counter";
+import {useSelector} from "react-redux";
+import { Counter, HeaderMenuBar, Courses, Airplanes } from 'modules';
+import {addTodo, getTodos} from "services/api/requests";
+import Context from "pages/PresenationPage/context";
 
 function PresentationPage() {
+  const [todos, setTodos] = useState();
+
+  const contextFunc = () => {
+    console.log('contextFunc')
+  }
+
+  const [buttonState, setButtonState] = useState(false);
+
+  const airplanes = useSelector(state => state.airplanes.directions);
+  console.log(airplanes)
+
+
   const handleSubmitForm = (data, formikHelpers) => {
     console.log(data)
     console.log(formikHelpers)
@@ -30,11 +44,16 @@ function PresentationPage() {
   })
   console.log(formik)
 
-  const [buttonState, setButtonState] = useState(false);
-
   const handleClick = () => {
     setButtonState(!buttonState);
   }
+
+  useEffect(() => {
+    addTodo()
+    getTodos(setTodos);
+  }, []);
+
+  console.log(todos)
 
   return (
     <div>
@@ -45,6 +64,7 @@ function PresentationPage() {
           <NavigationLink href={PAGE_ROUTES.PROFILE}>Profile</NavigationLink>
           <NavigationLink href={PAGE_ROUTES.SIGN_IN}>Sign in</NavigationLink>
           <NavigationLink href={PAGE_ROUTES.CONTACT}>Contact</NavigationLink>
+          <NavigationLink href={PAGE_ROUTES.FAVORITES}>Favorites</NavigationLink>
           <Star></Star>
         </NavigationListWrapper>
       </HeaderMenuBar>
@@ -144,6 +164,11 @@ function PresentationPage() {
         </Buttons>
       </form>
       <Counter></Counter>
+        <Airplanes airplanes={airplanes}/>
+      <Courses/>
+      <Context.Provider value={{contextFunc}}>
+        <Counter />
+      </Context.Provider>
     </div>
   )
 }
